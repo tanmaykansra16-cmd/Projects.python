@@ -1,44 +1,49 @@
-print("Welcome to Python Pizza Deliveries!")
-bill =0
-size = input("What size pizza do you want? S, M or L: ")
-if size == "S":
-     bill = 15
-elif size =="M":
-     bill = 20
-elif size =="L":
-     bill = 25
-else:
-    print("you typed the wrong input")
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-wantPep=input("do you want pepperoni on your pizza? Y or N")
-if wantPep == "Y":
-    if size == "S":
-        bill +=2
-    else:
-        bill +=3
-wantCheese= input("Do you want cheese on your pizza? Y or N")
-if wantCheese == "Y":
-    if size =="S":
-        bill+=1
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
 
-print(f"Your final bill is: ${bill}.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+import random
+image =[rock,paper,scissors]
+user = int(input("Enter your choice: type 0 for rock, 1 for paper, 2 for scissors: \n"))
+if user >=0 and user<=2:
+    print(image[user])
+computer = random.randint(0,2)
+print("computer chose:")
+print(image[computer])
+if user ==0 and computer == 2:
+    print("you won")
+elif user>=3 or user<=0:
+    print("type again, you lost")
+elif computer>user:
+    print("you lost")
+elif user == 2 and computer == 0:
+    print("you lost")
+elif user>computer:
+    print("you won")
+elif computer == user:
+    print("draw")
 
 
 
